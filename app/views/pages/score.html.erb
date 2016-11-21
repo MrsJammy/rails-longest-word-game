@@ -1,0 +1,27 @@
+<h1>Pages#score</h1>
+<p>Find me in app/views/pages/score.html.erb</p>
+
+
+ should compute and display your score.
+
+<p> ******** Now your result ********</p>
+<!--
+result = run_game(attempt, grid, start_time, end_time) -->
+
+<p> Your word: <%= @attempt %> </p>
+<p> "Time Taken to answer: <%= @elapsed_time %> sec."</p>
+<% if @result[:translation] %>
+  <p>j'affiche le mot, le temps, le score</p>
+<% else %>
+  <p> ta réponse c'est de la merde et tu devrais recommencer </p>
+<% end %>
+
+
+<!--
+
+# <p> "Your score: #{result[:score]}"</p>
+# <p> "Message: #{result[:message]}"</p>
+
+# <p> "*****************************************************"</p>
+ -->
+

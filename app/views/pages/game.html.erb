@@ -1,0 +1,25 @@
+<h1>Pages#game</h1>
+<p>Find me in app/views/pages/game.html.erb</p>
+
+<!-- Render the page with a new random grid of words, and the HTML form to write your guess just below the word-grid.
+
+1/ générer la grille de lettres
+ -->
+<p>******** Welcome to the longest word-game !********</p>
+<p>Number of letters in grid:</p>
+
+<p><%= @query %></p>
+<p><%= @grid %></p>
+<p><%= @grid.join(" ") %></p>
+
+
+<!-- # 2/ le formulaire pour rentrer sa proposition
+ -->
+<form action="/score" method="get">
+  <label for="question">"What's your best shot ?"</label>
+  <input type="text" id="attempt" name="attempt" placeholder="here your proposition">
+  <input type="submit" value="Try me!">
+  <input type="hidden" name="grid" value="<%= @grid.join %>">
+  <input type="hidden" name="start_time" value="<%= Time.now.to_i %>">
+</form>
+
